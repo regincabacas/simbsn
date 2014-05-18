@@ -2,7 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.bsnsimulator;
+package bsn.simulator;
+
+import java.util.Vector;
 
 /**
  *
@@ -10,23 +12,15 @@ package com.bsnsimulator;
  */
 public class CoordinatorNode implements Runnable{
     
-//    public CoordinatorNode(){
-//        
-//    }
+     
+     Vector <Beacon>beacon = new Vector();
     
-    public void sendBeaconMessage(Node n){
+    public void sendBeaconMessage(Node n, int currTime){
         
-        Beacon b = new Beacon(n);
-        
- 
+        System.out.println("Sending beacon to " + n.getId());
+        Beacon b = new Beacon(n, currTime);
     }
-    
-    
-    public void createBeaconMessage(){
-        
-        
-        
-    }
+
 
     @Override
     public void run() {
